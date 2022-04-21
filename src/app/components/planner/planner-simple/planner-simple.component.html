@@ -1,0 +1,23 @@
+<section class="planner-section">
+  <h1 class="planner-title">Simple Planner</h1>
+
+  <div class="planner-container">
+    <div class="planner">
+      <div class="planner-action-container">
+
+        <input [(ngModel)]="inputValue" class="planer-task-input" type="text" placeholder="Add new task...">
+
+        <button (click)="addTask()" class="planner-btn-add">
+          Add
+        </button>
+      </div>
+
+      <ul class="planner-list">
+        <li *ngFor="let task of tasks" class="planner-list-item">
+          {{ task }}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>

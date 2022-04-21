@@ -1,0 +1,38 @@
+<section class="planner-section">
+  <h1 class="planner-title">Planner With CheckBoxes</h1>
+
+  <div class="planner-container">
+    <div class="planner">
+      <div class="planner-action-container">
+
+        <input
+          [(ngModel)]="inputValue"
+          (keydown.enter)="addTask()"
+          class="planer-task-input"
+          type="text"
+          placeholder="Add new task...">
+
+        <button (click)="addTask()" class="planner-btn-add">
+          Add
+        </button>
+      </div>
+
+      <div *ngFor="let task of tasks; let i = index" class="planner-task">
+
+        <div>
+          <input
+            (change)="toggleTaskDone($event, i)"
+            [checked]="task.done"
+            class="planner-task-checkbox"
+            type="checkbox">
+        </div>
+
+        <div>
+          <p [ngClass]="{'task-done': task.done}">{{ task.text }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,65 @@
+.planner-section {
+  padding: 20px 0;
+}
+
+.planner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.planner-title {
+  text-align: center;
+}
+.planner {
+  border: none;
+  padding: 20px;
+  background-color: #dee38c;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 1px inset, rgba(0, 0, 0, 0.9) 0 0 0 1px;
+  min-width: 280px;
+}
+
+.planner-action-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.planer-task-input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 1px inset, rgba(0, 0, 0, 0.9) 0 0 0 1px;
+  padding: 0 5px;
+  outline: none;
+  color: #000000;
+}
+
+//List
+.planner-list {
+  padding:  0 20px;
+}
+
+.planner-list-item::marker {
+  color: #207fdc;
+}
+
+//Button styles
+.planner-btn-add {
+  background-color: #5391ce;
+  color: #f3ebeb;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 1px inset, rgba(0, 0, 0, 0.9) 0 0 0 1px;
+  cursor: pointer;
+  transition: background-color .5s ease-in-out;
+  outline: none;
+
+  &:hover {
+    background-color: #207fdc;
+    opacity: 12;
+  }
+}
