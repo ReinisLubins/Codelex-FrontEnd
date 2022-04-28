@@ -1,0 +1,9 @@
+<section class="character-section">
+  <h1 class="character-section-title">Rick & Morty Characters</h1>
+
+  <div *ngIf="characters$ | async as characters" class="character-container">
+    <div *ngFor="let character of characters" class="character-card-container">
+      <app-character-card [character]="character"></app-character-card>
+    </div>
+  </div>
+</section>

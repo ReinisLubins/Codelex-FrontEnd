@@ -1,0 +1,55 @@
+<section class="login-form-section">
+  <h1>Login Form</h1>
+
+  <div class="login-form-container">
+
+    <div class="form-image-container">
+      <img class="form-image" src="assets/images/img.png" alt="image">
+    </div>
+
+    <form [formGroup]="loginForm" class="login-form">
+
+      <div class="form-item">
+        <label for="email">Email</label>
+        <input
+          [ngClass]="{'input-error': loginForm.controls['email'].touched && loginForm.controls['email'].invalid}"
+          class="form-text-input"
+          formControlName="email"
+          id="email"
+          type="text"/>
+        <small
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].hasError('required')"
+          class="form-error">
+          This field is required
+        </small>
+        <small
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].hasError('email')"
+          class="form-error">
+          Wrong format.
+        </small>
+      </div>
+
+      <div class="form-item">
+        <label for="password">Password</label>
+        <input class="form-text-input" formControlName="password" id="password" type="password"/>
+      </div>
+
+      <label>
+        <input formControlName="subscribe" type="checkbox"/>
+        Subscribe to Newsletter
+      </label>
+
+      <select class="country-select" formControlName="country">
+        <option [value]="''" disabled>Choose a country</option>
+        <option *ngFor="let country of countries" [value]="country.countryCode">
+          {{ country.title }}
+        </option>
+      </select>
+
+      <div class="login-btn-container">
+        <button class="login-btn" type="button" (click)="login()">Login</button>
+      </div>
+
+    </form>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<div *ngIf="people && collectionSize" class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th *ngFor="let title of columnTitles">{{title}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{person.name}}</td>
+      <td>{{person.height}}</td>
+      <td>{{person.mass}}</td>
+      <td>{{person.hair_color}}</td>
+      <td>{{person.skin_color}}</td>
+      <td>{{person.eye_color}}</td>
+      <td>{{person.birth_year}}</td>
+      <td>{{person.gender}}</td>
+      <td>{{person.created}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [pageSize]="10"
+    (pageChange)="onPageChange()"
+    aria-label="Default pagination">
+  </ngb-pagination>
+</div>
+
